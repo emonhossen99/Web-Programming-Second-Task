@@ -18,7 +18,7 @@
   <nav>
     <div class="nav-logo">My<span>API</span> Store</div>
     <ul class="nav-links">
-      <li><a href="#">Products</a></li>
+      <li><a href="#search-section">Products</a></li>
     </ul>
     <button class="btn-nav">Sign Up</button>
   </nav>
@@ -36,11 +36,6 @@
       Experience the pinnacle of mobile engineering — ultra-precision glass, cinema-grade cameras, and the chip that
       redefines what a phone can do.
     </p>
-    <div class="hero-cta">
-      <button class="btn-primary">Buy Now</button>
-      <button class="btn-outline">View Specs</button>
-    </div>
-
     <!-- Phone Showcase -->
     <div class="showcase">
       <div class="phone-visual">
@@ -195,198 +190,25 @@
     </div>
   </section>
 
-  <!-- MARQUEE -->
-  <div class="marquee-wrap">
-    <div class="marquee">
-      <span class="marquee-item">✦ <strong>iPhone 13 Pro Max</strong> — Starting from $999</span>
-      <span class="marquee-item">✦ <strong>Free Shipping</strong> on all orders above $500</span>
-      <span class="marquee-item">✦ <strong>2-Year Warranty</strong> included with every device</span>
-      <span class="marquee-item">✦ <strong>Premium Support</strong> 24 hours a day, 7 days a week</span>
-      <span class="marquee-item">✦ <strong>iPhone 13 Pro Max</strong> — Starting from $999</span>
-      <span class="marquee-item">✦ <strong>Free Shipping</strong> on all orders above $500</span>
-      <span class="marquee-item">✦ <strong>2-Year Warranty</strong> included with every device</span>
-      <span class="marquee-item">✦ <strong>Premium Support</strong> 24 hours a day, 7 days a week</span>
-    </div>
-  </div>
-
   <!-- SEARCH -->
-  <section class="search-section reveal">
+  <section id="search-section" class="search-section reveal">
     <div class="section-eyebrow">Find Your Device</div>
     <h2 class="section-title">Search Your Phone</h2>
     <div class="search-bar">
-      <input type="text" placeholder="Search by model, brand, or price..." id="searchInput" />
-      <button onclick="handleSearch()">Search</button>
+      <input type="text" placeholder="Search by name..." id="searchInput" />
+      <button onclick="handleSearch()"><span id="search-loader" class="loader search-loader"></span> Search →</button>
     </div>
+    <span id="search_error">Search field is required</span>
   </section>
 
   <!-- PRODUCTS -->
   <section class="products-section">
-    <div class="products-header reveal">
-      <div>
-        <div class="section-eyebrow">Featured Collection</div>
-        <h2 class="section-title" style="margin-bottom:0">Top Picks</h2>
-      </div>
-      <a href="#"
-        style="color:var(--accent);text-decoration:none;font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;border-bottom:1px solid rgba(232,201,122,0.4);padding-bottom:2px;">View
-        All →</a>
-    </div>
     <div class="products-grid" id="productsGrid">
-      <!-- Card 1 -->
-      <div class="product-card reveal">
-        <div class="card-img">
-          <div class="card-badge">New</div>
-          <svg viewBox="0 0 120 220" style="height:170px">
-            <defs>
-              <linearGradient id="c1" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#2a2a3d" />
-                <stop offset="100%" stop-color="#1a1a2a" />
-              </linearGradient>
-              <linearGradient id="cs1" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#1a2a4a" />
-                <stop offset="100%" stop-color="#3a1a4a" />
-              </linearGradient>
-            </defs>
-            <rect x="8" y="5" width="104" height="210" rx="18" fill="#0d0d15" stroke="#333" stroke-width="1" />
-            <rect x="11" y="8" width="98" height="204" rx="16" fill="url(#c1)" />
-            <rect x="15" y="22" width="90" height="172" rx="10" fill="url(#cs1)" />
-            <rect x="38" y="22" width="44" height="11" rx="5.5" fill="#0a0a14" />
-            <circle cx="78" cy="26" r="3" fill="#070710" />
-            <rect x="20" y="40" width="15" height="15" rx="4" fill="rgba(255,80,80,0.8)" />
-            <rect x="40" y="40" width="15" height="15" rx="4" fill="rgba(80,160,255,0.8)" />
-            <rect x="60" y="40" width="15" height="15" rx="4" fill="rgba(100,220,120,0.8)" />
-            <rect x="80" y="40" width="15" height="15" rx="4" fill="rgba(255,180,0,0.8)" />
-            <rect x="20" y="62" width="15" height="15" rx="4" fill="rgba(180,80,255,0.7)" />
-            <rect x="40" y="62" width="15" height="15" rx="4" fill="rgba(0,200,220,0.7)" />
-            <rect x="60" y="62" width="15" height="15" rx="4" fill="rgba(255,120,60,0.7)" />
-            <rect x="80" y="62" width="15" height="15" rx="4" fill="rgba(60,120,255,0.7)" />
-            <rect x="20" y="84" width="15" height="15" rx="4" fill="rgba(255,200,100,0.6)" />
-            <rect x="40" y="84" width="15" height="15" rx="4" fill="rgba(100,255,180,0.6)" />
-            <rect x="60" y="84" width="15" height="15" rx="4" fill="rgba(255,60,140,0.6)" />
-            <rect x="80" y="84" width="15" height="15" rx="4" fill="rgba(140,60,255,0.6)" />
-            <rect x="20" y="170" width="20" height="14" rx="4" fill="rgba(100,200,255,0.7)" />
-            <rect x="45" y="170" width="20" height="14" rx="4" fill="rgba(100,255,120,0.7)" />
-            <rect x="70" y="170" width="20" height="14" rx="4" fill="rgba(255,140,80,0.7)" />
-            <rect x="95" y="170" width="15" height="14" rx="4" fill="rgba(200,100,255,0.7)" />
-            <rect x="44" y="192" width="32" height="3" rx="1.5" fill="rgba(255,255,255,0.2)" />
-          </svg>
-        </div>
-        <div class="card-body">
-          <div class="card-brand">Apple</div>
-          <h3 class="card-name">iPhone 13 Pro Max</h3>
-          <p class="card-desc">48MP Pro camera system with ProRAW support, 6.7" Super Retina XDR display with ProMotion.
-          </p>
-          <div class="card-footer">
-            <div class="card-price">
-              <span>Starting at</span>
-              $999
-            </div>
-            <button class="btn-card">Details</button>
-          </div>
-        </div>
-      </div>
-      <!-- Card 2 -->
-      <div class="product-card reveal reveal-delay-1">
-        <div class="card-img">
-          <div class="card-badge" style="background:var(--accent2); color:#fff;">Hot</div>
-          <svg viewBox="0 0 120 220" style="height:170px">
-            <defs>
-              <linearGradient id="c2" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#1e2e2e" />
-                <stop offset="100%" stop-color="#1a1a28" />
-              </linearGradient>
-              <linearGradient id="cs2" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#0d3a3a" />
-                <stop offset="100%" stop-color="#1a2a1a" />
-              </linearGradient>
-            </defs>
-            <rect x="8" y="5" width="104" height="210" rx="18" fill="#0a1010" stroke="#1a3030" stroke-width="1" />
-            <rect x="11" y="8" width="98" height="204" rx="16" fill="url(#c2)" />
-            <rect x="15" y="22" width="90" height="172" rx="10" fill="url(#cs2)" />
-            <rect x="38" y="22" width="44" height="11" rx="5.5" fill="#050d0d" />
-            <circle cx="78" cy="26" r="3" fill="#020808" />
-            <rect x="20" y="40" width="15" height="15" rx="4" fill="rgba(0,220,160,0.8)" />
-            <rect x="40" y="40" width="15" height="15" rx="4" fill="rgba(0,160,220,0.8)" />
-            <rect x="60" y="40" width="15" height="15" rx="4" fill="rgba(100,255,150,0.8)" />
-            <rect x="80" y="40" width="15" height="15" rx="4" fill="rgba(255,200,60,0.8)" />
-            <rect x="20" y="62" width="15" height="15" rx="4" fill="rgba(60,200,180,0.7)" />
-            <rect x="40" y="62" width="15" height="15" rx="4" fill="rgba(120,220,80,0.7)" />
-            <rect x="60" y="62" width="15" height="15" rx="4" fill="rgba(80,180,255,0.7)" />
-            <rect x="80" y="62" width="15" height="15" rx="4" fill="rgba(255,180,100,0.7)" />
-            <rect x="20" y="84" width="15" height="15" rx="4" fill="rgba(200,80,255,0.6)" />
-            <rect x="40" y="84" width="15" height="15" rx="4" fill="rgba(255,100,100,0.6)" />
-            <rect x="60" y="84" width="15" height="15" rx="4" fill="rgba(100,220,255,0.6)" />
-            <rect x="80" y="84" width="15" height="15" rx="4" fill="rgba(255,220,60,0.6)" />
-            <rect x="20" y="170" width="20" height="14" rx="4" fill="rgba(0,220,180,0.7)" />
-            <rect x="45" y="170" width="20" height="14" rx="4" fill="rgba(100,200,255,0.7)" />
-            <rect x="70" y="170" width="20" height="14" rx="4" fill="rgba(100,255,120,0.7)" />
-            <rect x="95" y="170" width="15" height="14" rx="4" fill="rgba(255,200,80,0.7)" />
-            <rect x="44" y="192" width="32" height="3" rx="1.5" fill="rgba(255,255,255,0.2)" />
-          </svg>
-        </div>
-        <div class="card-body">
-          <div class="card-brand">Apple</div>
-          <h3 class="card-name">iPhone 13 Pro Max</h3>
-          <p class="card-desc">Cinematic mode for video, A15 Bionic chip with 5-core GPU, all-day battery life.</p>
-          <div class="card-footer">
-            <div class="card-price">
-              <span>Starting at</span>
-              $999
-            </div>
-            <button class="btn-card">Details</button>
-          </div>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="product-card reveal reveal-delay-2">
-        <div class="card-img">
-          <svg viewBox="0 0 120 220" style="height:170px">
-            <defs>
-              <linearGradient id="c3" x1="1" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#2e2010" />
-                <stop offset="100%" stop-color="#1a1a1a" />
-              </linearGradient>
-              <linearGradient id="cs3" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#3a2000" />
-                <stop offset="100%" stop-color="#200020" />
-              </linearGradient>
-            </defs>
-            <rect x="8" y="5" width="104" height="210" rx="18" fill="#0d0a08" stroke="#2a1a0a" stroke-width="1" />
-            <rect x="11" y="8" width="98" height="204" rx="16" fill="url(#c3)" />
-            <rect x="15" y="22" width="90" height="172" rx="10" fill="url(#cs3)" />
-            <rect x="38" y="22" width="44" height="11" rx="5.5" fill="#0d0800" />
-            <circle cx="78" cy="26" r="3" fill="#080500" />
-            <rect x="20" y="40" width="15" height="15" rx="4" fill="rgba(255,160,0,0.8)" />
-            <rect x="40" y="40" width="15" height="15" rx="4" fill="rgba(255,80,60,0.8)" />
-            <rect x="60" y="40" width="15" height="15" rx="4" fill="rgba(220,180,60,0.8)" />
-            <rect x="80" y="40" width="15" height="15" rx="4" fill="rgba(200,80,200,0.8)" />
-            <rect x="20" y="62" width="15" height="15" rx="4" fill="rgba(80,200,255,0.7)" />
-            <rect x="40" y="62" width="15" height="15" rx="4" fill="rgba(255,220,80,0.7)" />
-            <rect x="60" y="62" width="15" height="15" rx="4" fill="rgba(100,255,120,0.7)" />
-            <rect x="80" y="62" width="15" height="15" rx="4" fill="rgba(255,120,200,0.7)" />
-            <rect x="20" y="84" width="15" height="15" rx="4" fill="rgba(140,100,255,0.6)" />
-            <rect x="40" y="84" width="15" height="15" rx="4" fill="rgba(255,180,60,0.6)" />
-            <rect x="60" y="84" width="15" height="15" rx="4" fill="rgba(60,200,200,0.6)" />
-            <rect x="80" y="84" width="15" height="15" rx="4" fill="rgba(255,100,100,0.6)" />
-            <rect x="20" y="170" width="20" height="14" rx="4" fill="rgba(255,160,60,0.7)" />
-            <rect x="45" y="170" width="20" height="14" rx="4" fill="rgba(255,80,80,0.7)" />
-            <rect x="70" y="170" width="20" height="14" rx="4" fill="rgba(220,160,0,0.7)" />
-            <rect x="95" y="170" width="15" height="14" rx="4" fill="rgba(180,80,255,0.7)" />
-            <rect x="44" y="192" width="32" height="3" rx="1.5" fill="rgba(255,255,255,0.2)" />
-          </svg>
-        </div>
-        <div class="card-body">
-          <div class="card-brand">Apple</div>
-          <h3 class="card-name">iPhone 13 Pro Max</h3>
-          <p class="card-desc">Up to 1TB storage, Ceramic Shield front, surgical-grade stainless steel design.</p>
-          <div class="card-footer">
-            <div class="card-price">
-              <span>Starting at</span>
-              $999
-            </div>
-            <button class="btn-card">Details</button>
-          </div>
-        </div>
-      </div>
+    </div>
+    <div class="loadMoreBtnDiv">
+      <button id="loadMoreBtn" class="btn-card" onclick="handleLoadMore()" style="display: none;">
+        Load More →
+      </button>
     </div>
   </section>
 
@@ -451,63 +273,16 @@
     </div>
     <div class="footer-bottom">
       <span>© 2025 MyAPI Store. All rights reserved.</span>
-      <span>Designed with ♥ for phone lovers worldwide.</span>
+      <span>Designed Md Emon Hossen.</span>
     </div>
   </footer>
-
-  <script>
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.12
-    });
-    reveals.forEach(r => observer.observe(r));
-
-    // Counter animation
-    const counters = document.querySelectorAll('.stat-num');
-    const cObserver = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          const target = parseInt(e.target.dataset.count);
-          let current = 0;
-          const step = target / 60;
-          const timer = setInterval(() => {
-            current += step;
-            if (current >= target) {
-              current = target;
-              clearInterval(timer);
-            }
-            const suffix = e.target.dataset.count === '98' ? '%' : '+';
-            e.target.textContent = Math.floor(current) + suffix;
-          }, 20);
-          cObserver.unobserve(e.target);
-        }
-      });
-    }, {
-      threshold: 0.5
-    });
-    counters.forEach(c => cObserver.observe(c));
-
-    // Search handler
-    function handleSearch() {
-      const val = document.getElementById('searchInput').value.trim();
-      if (val) {
-        const cards = document.querySelectorAll('.product-card');
-        cards.forEach(c => {
-          const name = c.querySelector('.card-name').textContent.toLowerCase();
-          c.style.opacity = name.includes(val.toLowerCase()) ? '1' : '0.2';
-        });
-      }
-    }
-    document.getElementById('searchInput').addEventListener('keydown', e => {
-      if (e.key === 'Enter') handleSearch();
-    });
-  </script>
+  <div id="phoneModal" class="modal">
+  <div class="modal-box">
+    <span class="close-btn" onclick="closeModal()">✖</span>
+    <div id="modalContent"></div>
+  </div>
+</div>
+  <script src="./main.js"></script>
 </body>
+
 </html>
