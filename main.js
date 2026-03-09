@@ -23,15 +23,11 @@ const loadPhone = async (searchText) => {
       `https://openapi.programming-hero.com/api/phones?search=${searchText}`
     );
     const serverData = await res.json();
-
     allPhones = serverData.data || [];
     currentIndex = 0;
-
     const productsGrid = document.getElementById("productsGrid");
     const searchLoader = document.getElementById("search-loader");
-
     productsGrid.innerHTML = "";
-
     if (allPhones.length === 0) {
       searchLoader.style.display = "none";
       productsGrid.innerHTML = `
@@ -47,7 +43,6 @@ const loadPhone = async (searchText) => {
     displayPhone();
     toggleLoadMoreButton();
   } catch (error) {
-    console.error("Error loading phones:", error);
     document.getElementById("search-loader").style.display = "none";
   }
 };
@@ -99,25 +94,23 @@ const loadPhoneDetails = async (slug) => {
     );
     const data = await res.json();
     showPhoneDetails(data.data);
-  } catch (error) {
-    console.error("Error loading phone details:", error);
-  }
+  } catch (error) {}
 };
 
 const showPhoneDetails = (phone) => {
   const modalContent = document.getElementById("modalContent");
-
   modalContent.innerHTML = `
-    <h2>${phone.name}</h2>
-    <img src="${phone.image}" width="200" alt="${phone.name}">
-    <p><strong>Brand:</strong> ${phone.brand || "Not Available"}</p>
-    <p><strong>Release Date:</strong> ${phone.releaseDate || "Not Available"}</p>
-    <p><strong>Chipset:</strong> ${phone.mainFeatures?.chipSet || "Not Available"}</p>
-    <p><strong>Display:</strong> ${phone.mainFeatures?.displaySize || "Not Available"}</p>
-    <p><strong>Memory:</strong> ${phone.mainFeatures?.memory || "Not Available"}</p>
-    <p><strong>Storage:</strong> ${phone.mainFeatures?.storage || "Not Available"}</p>
+    <div class="view_modal_content">
+      <h2>${phone.name}</h2>
+      <div class="image"><img src="${phone.image}" alt="${phone.name}"></div>
+      <p><strong>Brand:</strong> ${phone.brand || "Not Available"}</p>
+      <p><strong>Release Date:</strong> ${phone.releaseDate || "Not Available"}</p>
+      <p><strong>Chipset:</strong> ${phone.mainFeatures?.chipSet || "Not Available"}</p>
+      <p><strong>Display:</strong> ${phone.mainFeatures?.displaySize || "Not Available"}</p>
+      <p><strong>Memory:</strong> ${phone.mainFeatures?.memory || "Not Available"}</p>
+      <p><strong>Storage:</strong> ${phone.mainFeatures?.storage || "Not Available"}</p>
+    </div>
   `;
-
   document.getElementById("phoneModal").style.display = "flex";
 };
 
