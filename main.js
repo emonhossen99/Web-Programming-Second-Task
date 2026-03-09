@@ -6,12 +6,10 @@ function handleSearch() {
   const searchInputElement = document.getElementById("searchInput");
   const searchError = document.getElementById("search_error");
   const searchInputValue = searchInputElement.value.trim();
-
   if (searchInputValue === "") {
     searchError.style.display = "block";
     return;
   }
-
   searchError.style.display = "none";
   document.getElementById("search-loader").style.display = "block";
   loadPhone(searchInputValue);

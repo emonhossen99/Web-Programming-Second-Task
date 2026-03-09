@@ -643,7 +643,6 @@ footer {
     color: var(--accent);
 }
 
-/* SCROLL REVEAL */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -679,7 +678,6 @@ footer {
     }
 }
 
-/* PHONE PLACEHOLDER SVGs */
 .phone-visual {
     width: 100%;
     display: flex;
