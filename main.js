@@ -95,7 +95,7 @@ const toggleLoadMoreButton = () => {
 const loadPhoneDetails = async (slug) => {
   try {
     const res = await fetch(
-      `https://openapi.programming-hero.com/api/phone/${slug}`
+      `https://openapi.programming-hero.com/api/phone/apple_iphone_13_mini-11104'`
     );
     const data = await res.json();
     showPhoneDetails(data.data);
